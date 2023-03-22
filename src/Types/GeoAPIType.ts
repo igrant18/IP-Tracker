@@ -26,4 +26,5 @@ export type GeoAPIType = {
         vpn: boolean,
         tor: boolean
     },
+    messages?: string
 }

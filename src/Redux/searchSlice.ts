@@ -37,7 +37,7 @@ const SearchValueInitailState = {
         proxy: false,
         vpn: false,
         tor: false
-      }
+      },
     },
     isPending: false,
     error: ''

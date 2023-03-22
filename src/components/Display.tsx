@@ -8,19 +8,19 @@ function Display() {
     <div className="Display">
       <div className='box'>
         <h1 className='DisplayHeader'>IP ADDRESS</h1>
-        <p className='DisplayValue'>{searchValue.ip}</p>
+        <p className='DisplayValue'>{!searchValue.messages ? searchValue.ip : ''}</p>
       </div>
       <div className='box'>
         <h1 className='DisplayHeader'>LOCATION</h1>
-        <p className='DisplayValue'>{searchValue.location.city}</p>
+        <p className='DisplayValue'>{!searchValue.messages ? searchValue.location.city : ''}</p>
       </div>
       <div className='box'>
         <h1 className='DisplayHeader'>TIMEZONE</h1>
-        <p className='DisplayValue'>{searchValue.location.timezone}</p>
+        <p className='DisplayValue'>{!searchValue.messages ? searchValue.location.timezone : ''}</p>
       </div>
       <div className='box'>
         <h1 className='DisplayHeader'>ISP</h1>
-        <p className='DisplayValue'>{searchValue.isp}</p>
+        <p className='DisplayValue'>{!searchValue.messages ? searchValue.isp : ''}</p>
       </div>
     </div>
   )
