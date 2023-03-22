@@ -1,3 +1,4 @@
+import { LatLngExpression } from 'leaflet'
 import { Component, Suspense } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
@@ -19,7 +20,7 @@ class App extends Component<AppProps> {
   render() {
     const { searchValue } = this.props;
     let isError: boolean = false;
-    let position: [Number, Number] = [0,0];
+    let position: LatLngExpression | undefined = [0,0];
     if(searchValue.messages) { 
       isError = true 
     } else {

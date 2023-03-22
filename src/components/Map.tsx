@@ -1,4 +1,4 @@
-import { latLng } from 'leaflet';
+import { latLng, LatLngExpression } from 'leaflet';
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 import { useAppSelector } from '../Redux/store';
@@ -6,7 +6,7 @@ import { GeoAPIType } from '../Types/GeoAPIType';
 import './Map.css'
 
 type MapProps = {
-    position: [Number, Number],
+    position: LatLngExpression | undefined,
     isError: boolean
 }
 
