@@ -11,7 +11,13 @@ export const searchAsync = createAsyncThunk<GeoAPIType, string>(
     }
 );
 
-const SearchValueInitailState = {
+type SearchStateType = {
+  searchValue : GeoAPIType,
+  isPending : boolean,
+  error: string
+}
+
+const SearchValueInitailState: SearchStateType = {
     searchValue: {
       ip: '',
       location: {
@@ -47,7 +53,7 @@ const searchSlice = createSlice({
     name: 'Posts',
     initialState: SearchValueInitailState,
     reducers: {
-        getValueSuccess(state, action) {
+        updateSearchValueValue(state, action) {
             state.searchValue = action.payload
         }
     },
@@ -62,10 +68,11 @@ const searchSlice = createSlice({
           })
           .addCase(searchAsync.rejected, (state) => {
             state.isPending = false;
+            state.error = 'An Error has Occured'
           });
       },
 });
 
-export const { getValueSuccess } = searchSlice.actions;
+export const { updateSearchValueValue } = searchSlice.actions;
 
 export default searchSlice.reducer;

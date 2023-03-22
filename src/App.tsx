@@ -29,9 +29,7 @@ class App extends Component<AppProps> {
     return (
       <div className="App">
         <Header />
-        <Suspense fallback={'ERROR IN SEARCH'}>
-          <Map position={position} isError={isError} />
-        </Suspense>
+        <Map position={position} isError={isError} />
       </div>
     )
   }

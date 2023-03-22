@@ -39,7 +39,6 @@ function Map({ position, isError }: MapProps) {
             <LocationMarker position={position} />
         </MapContainer>
     
-    
     return (
         <div className='map'>
             {render}
