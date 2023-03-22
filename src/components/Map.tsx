@@ -1,14 +1,21 @@
-import { latLng, LatLngExpression } from 'leaflet';
-import { useEffect, useState } from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
+import { latLng, LatLngExpression, Icon } from 'leaflet';
+import { useEffect } from 'react';
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import { useAppSelector } from '../Redux/store';
 import { GeoAPIType } from '../Types/GeoAPIType';
+import ArrowSVG  from '../assets/icon-location.svg'
 import './Map.css'
 
 type MapProps = {
     position: LatLngExpression | undefined,
     isError: boolean
 }
+
+const icon = new Icon({
+    iconUrl: ArrowSVG,
+    iconRetinaUrl: ArrowSVG,
+    popupAnchor: [-0, -0]
+})
 
 
 function LocationMarker({ position }: any) {
@@ -22,7 +29,7 @@ function LocationMarker({ position }: any) {
     })
   
     return position === null ? null : (
-      <Marker position={position} >
+      <Marker position={position} icon={icon}>
         <Popup>You are here</Popup>
       </Marker>
     )

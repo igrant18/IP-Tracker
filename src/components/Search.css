@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Rubik-Italic-VariableFont_wght;
+    src: url('../assets/Rubik-Italic-VariableFont_wght.ttf');
+}
+
 .SearchInputDiv {
     width: 100%;
     display: flex;
@@ -27,8 +32,16 @@
     border: 0;
     border-radius: 0px 10px 10px 0px;
     -webkit-appearance: none;
+    font-family: Rubik-Italic-VariableFont_wght;
+    font-size: 20px;
 }
 
 .SubmitButton:hover {
     cursor: pointer;
+}
+
+@media  screen and (max-width: 993px) {
+    .SearchInput {
+        width: 80%;
+    }
 }

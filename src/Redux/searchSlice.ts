@@ -25,8 +25,8 @@ const SearchValueInitailState: SearchStateType = {
         region: '',
         timezone: '',
         city: '',
-        lat: 0,
-        lng: 0,
+        lat: 51.5072,
+        lng: 0.1276,
         postalCode: 0,
         geonameId: 0
       },
