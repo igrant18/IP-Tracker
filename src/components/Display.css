@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Rubik-Italic-VariableFont_wght;
+    src: url('../assets/Rubik-Italic-VariableFont_wght.ttf');
+}
+
+.Display {
+    border-radius: 25px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+    background-color: white;
+    width: 70%;
+    height: 80%;
+    z-index: 10000;
+    padding: 20px;
+    display: table;
+    table-layout: fixed; 
+}
+
+.box {
+    border-right: 1px solid;
+    padding: 5px;
+    display: table-cell;
+}
+
+.Display div:last-child {
+    border: none;
+}
+
+.DisplayHeader {
+    font-size: 17px;
+    margin: 0;
+    margin-left: 10px;
+    font-family: Rubik-Italic-VariableFont_wght;
+    font-weight: 700;
+    color: gray;
+}
+
+.DisplayValue {
+    font-family: Rubik-Italic-VariableFont_wght;
+    font-weight: 700;
+    padding-left: 10px;
+    font-size: 30px;
+    margin: 0;
+    margin-top: 5px;
+}
