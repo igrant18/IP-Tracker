@@ -19,8 +19,8 @@ const SearchValueInitailState = {
         region: '',
         timezone: '',
         city: '',
-        lat: 51.505,
-        lng: -0.09,
+        lat: 0,
+        lng: 0,
         postalCode: 0,
         geonameId: 0
       },
