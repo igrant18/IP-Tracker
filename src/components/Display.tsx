@@ -1,27 +1,25 @@
 import { useAppSelector } from '../Redux/store';
 import { GeoAPIType } from '../Types/GeoAPIType';
+import Box from './Box';
 import './Display.css'
 
 function Display() {
   const searchValue: GeoAPIType = useAppSelector(state => state.searchValue);
+  let ip: string = '', city: string = '', timezone: string = '', isp: string = '';
+
+  if(!searchValue.messages) {
+    ip = searchValue.ip;
+    city = searchValue.location.city
+    timezone = searchValue.location.timezone;
+    isp = searchValue.isp;
+  }
+
   return (
     <div className="Display">
-      <div className='box'>
-        <h1 className='DisplayHeader'>IP ADDRESS</h1>
-        <p className='DisplayValue'>{!searchValue.messages ? searchValue.ip : ''}</p>
-      </div>
-      <div className='box'>
-        <h1 className='DisplayHeader'>LOCATION</h1>
-        <p className='DisplayValue'>{!searchValue.messages ? searchValue.location.city : ''}</p>
-      </div>
-      <div className='box'>
-        <h1 className='DisplayHeader'>TIMEZONE</h1>
-        <p className='DisplayValue'>{!searchValue.messages ? searchValue.location.timezone : ''}</p>
-      </div>
-      <div className='box'>
-        <h1 className='DisplayHeader'>ISP</h1>
-        <p className='DisplayValue'>{!searchValue.messages ? searchValue.isp : ''}</p>
-      </div>
+      <Box displayText={ip} headerText='IP ADDRESS' messages={searchValue.messages}/>
+      <Box displayText={city} headerText='LOCATION' messages={searchValue.messages}/>
+      <Box displayText={timezone} headerText='TIMEZONE' messages={searchValue.messages}/>
+      <Box displayText={isp} headerText='ISP' messages={searchValue.messages}/>
     </div>
   )
 }
