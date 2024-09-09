@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { GeoAPIType } from "../Types/GeoAPIType"
 
+
 export const searchAsync = createAsyncThunk<GeoAPIType, string>(
     'search/getSearch',
     async (ip) => {
-      const response = await fetch(`https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_kcb4dWgIzIcvBfu0YMfpzsVaZaIvk&ipAddress=${ip}`);
+      const response = await fetch(`https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${import.meta.env.IP_API_KEY}&ipAddress=${ip}`);
       const value = await response.json();
       // The value we return becomes the `fulfilled` action payload
       return value;
